@@ -1,0 +1,44 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/home/x4/Software/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'afzal' on host 'vxserver' (Linux_x86_64 version 5.4.0-050400-generic) on Mon Dec 11 14:47:56 HKT 2023
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm'
+Sourcing Tcl script 'run_hls.tcl'
+HOST_ARGS = /home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/data
+INFO: [HLS 200-1510] Running: open_project -reset gemm_test.prj 
+INFO: [HLS 200-10] Opening and resetting project '/home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/gemm_test.prj'.
+INFO: [HLS 200-1510] Running: add_files ../../../..//L1/tests/hw/gemm/uut_top.cpp -cflags -I../../../..//L1/include/hw -I../../../..//L1/tests/hw/gemm -I../../../..//L1/include/hw/xf_blas/helpers/utils -std=c++11  
+INFO: [HLS 200-10] Adding design file '../../../..//L1/tests/hw/gemm/uut_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../../../..//L1/tests/hw/gemm/test.cpp -cflags -std=c++11 -I../../../..//L1/include/hw -I../../../..//L1/tests/sw/include -I../../../..//L1/tests/hw/gemm -I../../../..//L1/include/hw/xf_blas/helpers/utils 
+INFO: [HLS 200-10] Adding test bench file '../../../..//L1/tests/hw/gemm/test.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top uut_top 
+INFO: [HLS 200-1510] Running: open_solution -reset sol 
+INFO: [HLS 200-10] Creating and opening solution '/home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/gemm_test.prj/sol'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1611] Setting target device to 'xcu50-fsvh2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 3.3333 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-1510] Running: csim_design -argv /home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/data/ 
+Running Dispatch Server on port: 34201
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../test.cpp in debug mode
+   Compiling ../../../../uut_top.cpp in debug mode
+   Generating csim.exe
+Pass!
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 265
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 7.27 seconds. CPU system time: 0.44 seconds. Elapsed time: 7.72 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 8.71 seconds. Total CPU system time: 1.15 seconds. Total elapsed time: 19.82 seconds; peak allocated memory: 748.867 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Dec 11 14:48:16 2023...

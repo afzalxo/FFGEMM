@@ -1,0 +1,44 @@
+INFO-FLOW: Workspace /home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/gemm_test.prj/sol opened at Mon Dec 11 14:47:57 HKT 2023
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute       send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vivado' config_interface -m_axi_latency=0 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+Execute       config_interface -m_axi_latency=0 
+Execute     set_part xcu50-fsvh2104-2-e 
+INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
+Execute       create_platform xcu50-fsvh2104-2-e -board  
+DBG:HLSDevice: Trying to load device library: /home/x4/Software/Xilinx/Vitis_HLS/2022.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/x4/Software/Xilinx/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xcu50-fsvh2104-2-e'
+Command       create_platform done; 1.33 sec.
+Execute       source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/x4/Software/Xilinx/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xcu50-fsvh2104-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.41 sec.
+Execute     create_clock -period 3.3333 
+INFO: [HLS 200-1510] Running: create_clock -period 3.3333 
+Execute       ap_set_clock -name default -period 3.333 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+Execute     csim_design -argv /home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/data/ 
+INFO: [HLS 200-1510] Running: csim_design -argv /home/x2/afzal/blocked_systolic_array/src/L1/tests/hw/gemm/data/ 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute       ap_part_info -name xcu50-fsvh2104-2-e -data info 
+Execute       source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command     csim_design done; 7.72 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 7.27 seconds. CPU system time: 0.44 seconds. Elapsed time: 7.72 seconds; current allocated memory: 0.000 MB.
+Execute     cleanup_all 
