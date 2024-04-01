@@ -72,9 +72,9 @@ PLATFORM_ALLOWLIST +=  u250 u200 u50
 PLATFORM_BLOCKLIST +=  vck aws-vu9p-f1
 
 include ./utils.mk
-TEMP_DIR := _x_temp.$(TARGET).$(PLATFORM_NAME).int8.16memWidth.ddr.unconstrained.16burst.275mhz
+TEMP_DIR := _x_temp.$(TARGET).$(PLATFORM_NAME)
 TEMP_REPORT_DIR := $(CUR_DIR)/reports/_x.$(TARGET).$(PLATFORM_NAME)
-BUILD_DIR := build_dir.$(TARGET).$(PLATFORM_NAME).int8.16memWidth.ddr.unconstrained.16burst.275mhz
+BUILD_DIR := build_dir.$(TARGET).$(PLATFORM_NAME)
 ifneq ($(RESULT_DIR),)
 BUILD_DIR = $(RESULT_DIR)
 endif
@@ -130,7 +130,7 @@ endif
 
 ########################## Kernel compiler global settings ##########################
 
-VPP_FLAGS +=   --config $(CUR_DIR)/conn_u280.cfg
+VPP_FLAGS +=   --config $(CUR_DIR)/conn_u50.cfg
 VPP_FLAGS +=  -I $(XFLIB_DIR)/L1/include/hw -I $(XFLIB_DIR)/L1/include/hw/xf_blas -I $(XFLIB_DIR)/L1/include/hw/xf_blas/gemm -I $(XFLIB_DIR)/L1/include/hw/xf_blas/helpers/utils -I $(XFLIB_DIR)/L2/include -I $(XFLIB_DIR)/L2/include/hw/xf_blas -I $(XFLIB_DIR)/L1/include/hw
 
 ######################### binary container global settings ##########################
