@@ -19,7 +19,16 @@ GEN_BIN_PROGRAM=gemm ${BLAS_m} ${BLAS_k} ${BLAS_n} ${BLAS_lda} ${BLAS_ldb} ${BLA
 BLAS_memWidth=16
 BLAS_XmemWidth=16
 
+# Both BLAS_dataType and BLAS_argInstrWidth need to be adjusted whenever the data type changes
+# Ensure that sizeof(BLAS_dataType) * BLAS_memWidth * BLAS_argInstrWidth = BLAS_instructionSizeBytes
+# So assuming BLAS_memWidth=16, If BLAS_dataType=int8_t, then BLAS_argInstrWidth=4
+# 				If BLAS_dataType=int16_t, then BLAS_argInstrWidth=2
+# 				If BLAS_dataType=int32_t, then BLAS_argInstrWidth=1
 BLAS_dataType=int8_t
+BLAS_argInstrWidth =   4
+BLAS_dataEqIntType = int8_t
+BLAS_XdataType     = int8_t
+
 BLAS_gemmMBlocks=4
 BLAS_gemmKBlocks=4
 BLAS_gemmNBlocks=4
@@ -30,9 +39,6 @@ BLAS_argPipeline        = 2
 BLAS_instructionSizeBytes = 64
 BLAS_numKernels         = 1
 
-BLAS_dataEqIntType = int8_t
-BLAS_XdataType     = int8_t
-BLAS_argInstrWidth =   4
 BLAS_numInstr      =  64
 TEST_MEMCPY        = 0
 BLAS_CACHE         = 0

@@ -62,7 +62,6 @@ read_block_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
 	        unsigned int l_SrcOffset = 
 		    l_wordLd * t_aMH * l_rowInd + l_colInd * t_ColMemWords + i * l_wordLd + j;
-		// hls::print("l_SrcOffset = %d\n", l_SrcOffset);
 		MemIntType l_word = l_Addr[l_SrcOffset];
 		p_BlockStream.write(l_word);
 	    }
@@ -86,7 +85,7 @@ read_to_buffer_inner:
 	}
       }
 
-      void ReadAndBufferComplete(MemIntType* l_Addr,
+      void ReadToBuffer_4x4_multidim(MemIntType* l_Addr,
 		      		 const unsigned int l_rowInd,
 				 const unsigned int l_colInd,
 				 const unsigned int l_wordLd,
@@ -111,7 +110,7 @@ read_and_buffer_complete_outer:
 	  }
       }
 
-      void ReadAndBufferComplete_flattened(MemIntType* l_Addr,
+      void ReadToBuffer_4x4(     MemIntType* l_Addr,
 		      		 const unsigned int l_rowInd,
 				 const unsigned int l_colInd,
 				 const unsigned int l_wordLd,
@@ -140,38 +139,7 @@ read_and_buffer_complete_outer:
 	  }
       }
 
-      void ReadAddBuffer_2(MemIntType* l_Addr,
-		  	   MemWideType l_buf0[t_aMH][t_ColMemWords],
-			   const bool l_buf0_sign,
-			   MemWideType l_buf1[t_aMH][t_ColMemWords],
-			   const bool l_buf1_sign,
-			   MemStream& p_BlockStream) { 
-read_add_buffer_2_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = 2 * t_ColMemWords
-read_add_buffer_2_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word(0);
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    // l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k];
-		    if (l_buf0_sign) {
-		       l_word[k] += l_buf0[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf0[i][j][k];
-		    }
-		    if (l_buf1_sign) {
-		       l_word[k] += l_buf1[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf1[i][j][k];
-		    }
-		}
-		MemIntType l_word_int = l_word;
-		p_BlockStream.write(l_word_int);
-	    }
-	}
-      }
-
-      void ReadAddBuffer_2_flattened(MemIntType* l_Addr,
+      void AddBlocks_2(MemIntType* l_Addr,
 		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
 			   const unsigned int l_buf0_blk_row,
 			   const unsigned int l_buf0_blk_col,
@@ -190,11 +158,11 @@ read_add_buffer_2_inner:
 		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
 						i * 4 * t_ColMemWords + 
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
 		    } else {
@@ -212,46 +180,7 @@ read_add_buffer_2_inner:
 	}
       }
 
-
-      void ReadAddBuffer_3(MemIntType* l_Addr,
-		  	   MemWideType l_buf0[t_aMH][t_ColMemWords],
-			   const bool l_buf0_sign,
-			   MemWideType l_buf1[t_aMH][t_ColMemWords],
-			   const bool l_buf1_sign,
-			   MemWideType l_buf2[t_aMH][t_ColMemWords],
-			   const bool l_buf2_sign,
-			   MemStream& p_BlockStream) { 
-read_add_buffer_3_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = 3 * t_ColMemWords
-read_add_buffer_3_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word(0);
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    // l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k] + l_buf2[i][j][k];
-		    if (l_buf0_sign) {
-		       l_word[k] += l_buf0[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf0[i][j][k];
-		    }
-		    if (l_buf1_sign) {
-		       l_word[k] += l_buf1[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf1[i][j][k];
-		    }
-		    if (l_buf2_sign) {
-		       l_word[k] += l_buf2[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf2[i][j][k];
-		    }
-		}
-		MemIntType l_word_int = l_word;
-		p_BlockStream.write(l_word_int);
-	    }
-	}
-      }
-
-      void ReadAddBuffer_3_flattened(MemIntType* l_Addr,
+      void AddBlocks_3(    MemIntType* l_Addr,
 		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
 			   const unsigned int l_buf0_blk_row,
 			   const unsigned int l_buf0_blk_col,
@@ -273,15 +202,15 @@ read_add_buffer_3_inner:
 		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
 						i * 4 * t_ColMemWords + 
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset2 = l_buf2_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf2_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
 		    } else {
@@ -304,52 +233,7 @@ read_add_buffer_3_inner:
 	}
       }
 
-      void ReadAddBuffer_4(MemIntType* l_Addr,
-		  	   MemWideType l_buf0[t_aMH][t_ColMemWords],
-			   const bool l_buf0_sign,
-			   MemWideType l_buf1[t_aMH][t_ColMemWords],
-			   const bool l_buf1_sign,
-			   MemWideType l_buf2[t_aMH][t_ColMemWords],
-			   const bool l_buf2_sign,
-			   MemWideType l_buf3[t_aMH][t_ColMemWords],
-			   const bool l_buf3_sign,
-			   MemStream& p_BlockStream) { 
-read_add_buffer_4_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = 4 * t_ColMemWords
-read_add_buffer_4_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word(0);
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    // l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k] + l_buf2[i][j][k] + l_buf3[i][j][k];
-		    if (l_buf0_sign) {
-		       l_word[k] += l_buf0[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf0[i][j][k];
-		    }
-		    if (l_buf1_sign) {
-		       l_word[k] += l_buf1[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf1[i][j][k];
-		    }
-		    if (l_buf2_sign) {
-		       l_word[k] += l_buf2[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf2[i][j][k];
-		    }
-		    if (l_buf3_sign) {
-		       l_word[k] += l_buf3[i][j][k];
-		    } else {
-		       l_word[k] -= l_buf3[i][j][k];
-		    }
-		}
-		MemIntType l_word_int = l_word;
-		p_BlockStream.write(l_word_int);
-	    }
-	}
-      }
-
-      void ReadAddBuffer_4_flattened(MemIntType* l_Addr,
+      void AddBlocks_4(    MemIntType* l_Addr,
 		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
 			   const unsigned int l_buf0_blk_row,
 			   const unsigned int l_buf0_blk_col,
@@ -364,29 +248,29 @@ read_add_buffer_4_inner:
 			   const unsigned int l_buf3_blk_col,
 			   const bool l_buf3_sign,
 			   MemStream& p_BlockStream) {
-read_add_buffer_3_outer:
+addblocks_4_outer:
 	for (int i = 0; i < t_aMH; ++i) {
 #pragma HLS PIPELINE II = 3 * t_ColMemWords
-read_add_buffer_3_inner:
+addblocks_4_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
 		MemWideType l_word(0);
 		for (int k = 0; k < t_MemWidth; ++k) {
 		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
 						i * 4 * t_ColMemWords + 
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset2 = l_buf2_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf2_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    unsigned int l_srcOffset3 = l_buf3_blk_row * 4 * t_aMH * t_ColMemWords + 
 			    			l_buf3_blk_col * t_ColMemWords +
 						i * 4 * t_ColMemWords +
-						j;// * t_MemWidth;
+						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
 		    } else {
@@ -414,40 +298,10 @@ read_add_buffer_3_inner:
 	}
       }
 
-      void AddFactors(  MemWideType l_buf0[t_aMH][t_ColMemWords],
-		       MemWideType l_buf1[t_aMH][t_ColMemWords],
-		       MemStream& p_BlockStream) {
-add_factors_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-add_factors_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void BlockBufferToStream(MemWideType l_buf[t_aMH][t_ColMemWords],
-		       	       MemStream& p_BlockStream) {
-get_factor_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-get_factor_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemIntType l_word = l_buf[i][j];
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void BlockBufferToStream_flattened(MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
-		      			 const unsigned int l_blk_row,
-					 const unsigned int l_blk_col,
-		       	       		 MemStream& p_BlockStream) {
+      void BufferToStream(MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
+		      	  const unsigned int l_blk_row,
+			  const unsigned int l_blk_col,
+		       	  MemStream& p_BlockStream) {
 get_factor_outer:
 	for (int i = 0; i < t_aMH; ++i) {
 #pragma HLS PIPELINE II = t_ColMemWords
@@ -489,88 +343,6 @@ read_add_sub_block_inner:
 	}
       }
 
-      void ReadAddPopulateBuffers(MemIntType* l_Addr,
-		      		  const unsigned int l_rowInd0,
-				  const unsigned int l_colInd0,
-				  const unsigned int l_rowInd1,
-				  const unsigned int l_colInd1,
-				  const unsigned int l_wordLd,
-				  MemWideType l_buf0[t_aMH][t_ColMemWords],
-				  MemWideType l_buf1[t_aMH][t_ColMemWords],
-				  MemStream& p_BlockStream) { 
-read_add_populate_buffers_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = 2 * t_ColMemWords
-read_add_populate_buffers_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		unsigned int l_SrcOffset_blk0 = l_wordLd * t_aMH * l_rowInd0 + l_colInd0 * t_ColMemWords + i * l_wordLd + j;
-		unsigned int l_SrcOffset_blk1 = l_wordLd * t_aMH * l_rowInd1 + l_colInd1 * t_ColMemWords + i * l_wordLd + j;
-	        MemWideType l_word0 = l_Addr[l_SrcOffset_blk0];
-		MemWideType l_word1 = l_Addr[l_SrcOffset_blk1];
-		l_buf0[i][j] = l_word0;
-		l_buf1[i][j] = l_word1;
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_word0[k] + l_word1[k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void ReadAddToBuffer(MemIntType* l_Addr,
-		      	   const unsigned int l_rowInd,
-			   const unsigned int l_colInd,
-			   const unsigned int l_wordLd,
-			   MemWideType l_buf_rd[t_aMH][t_ColMemWords],
-			   MemWideType l_buf_wr[t_aMH][t_ColMemWords],
-			   MemStream& p_BlockStream) {
-read_add_to_buffer_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-read_add_to_buffer_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		unsigned int l_SrcOffset = l_wordLd * t_aMH * l_rowInd + l_colInd * t_ColMemWords + i * l_wordLd + j;
-		MemWideType l_word = l_Addr[l_SrcOffset];
-		l_buf_wr[i][j] = l_word;
-		MemWideType o_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    o_word[k] = l_word[k] + l_buf_rd[i][j][k];
-		}
-		p_BlockStream.write(o_word);
-	    }
-	}
-      }
-
-      void AddBuffers( MemWideType l_buf0[t_aMH][t_ColMemWords],
-		       MemWideType l_buf1[t_aMH][t_ColMemWords],
-		       MemStream& p_BlockStream) {
-add_buffers_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-add_buffers_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void BufferToStream(MemWideType l_buf[t_aMH][t_ColMemWords],
-		      	 MemStream& p_BlockStream) {
-buffer_to_stream_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-buffer_to_stream_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		p_BlockStream.write(l_buf[i][j]);
-	    }
-	}
-      }
-		    
       void WriteOutputStrassen( MemIntType* l_Addr,
 		       const unsigned int l_rowInd,
 		       const unsigned int l_colInd,
@@ -578,8 +350,8 @@ buffer_to_stream_inner:
 		       MemStream& p_BlockStream) {
 	for (int i = 0; i < 4; ++i) {
 write_output_loop_tamh:
-		for (int k = 0; k < t_aMH; ++k) {
-	    for (int j = 0; j < 4; ++j) {
+	    for (int k = 0; k < t_aMH; ++k) {
+	        for (int j = 0; j < 4; ++j) {
 #pragma HLS PIPELINE II = t_ColMemWords
 		    for (int l = 0; l < t_ColMemWords; ++l) {
 		        // The data in the p_BlockStream comes block by block, there are a total of 4x4 blocks,
@@ -595,7 +367,7 @@ write_output_loop_tamh:
 	}
       }
 
-      void WriteOutputStrassen_New( MemIntType* l_Addr,
+      void WriteOutputStrassen_nonsequential( MemIntType* l_Addr,
 		       const unsigned int l_rowInd,
 		       const unsigned int l_colInd,
 		       const unsigned int l_wordLd,
@@ -619,102 +391,6 @@ write_output_loop_colmemwords:
 		}
 	    }
 	}
-      }
-
-
-
-      // Adds two matrix blocks element-wise and writes the result to the output stream
-      // The matrices are of sizes l_numElemsCol x (l_numMemWordsRow*t_MemWidth)
-      void AddBlocksStreams(   MemStream& p_StreamA,
-          	    	MemStream& p_StreamB,
-          		MemStream& p_StreamC) {
-add_blocks_outer:
-          for (unsigned int r = 0; r < t_aMH; ++r) {
-add_blocks_inner:
-              for (unsigned int c = 0; c < t_ColMemWords; ++c) {
-// #pragma HLS PIPELINE II = t_MemWidth
-                  MemWideType l_wordA = p_StreamA.read();
-          	  MemWideType l_wordB = p_StreamB.read();
-          	  MemWideType l_wordC;
-          	  for (unsigned int i = 0; i < t_MemWidth; ++i) {
-          	      l_wordC[i] = l_wordA[i] + l_wordB[i];
-          	  }
-          	  p_StreamC.write(l_wordC);
-              }
-          }
-      }
-
-      void AddBlocks_2(MemWideType l_buf0[t_aMH][t_ColMemWords],
-		       MemWideType l_buf1[t_aMH][t_ColMemWords],
-		       MemStream& p_BlockStream) {
-add_blocks_2_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-add_blocks_2_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void AddBlocks_3(MemWideType l_buf0[t_aMH][t_ColMemWords],
-		       MemWideType l_buf1[t_aMH][t_ColMemWords],
-		       MemWideType l_buf2[t_aMH][t_ColMemWords],
-		       MemStream& p_BlockStream) {
-add_blocks_3_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-add_blocks_3_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k] + l_buf2[i][j][k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void AddBlocks_4(MemWideType l_buf0[t_aMH][t_ColMemWords],
-		       MemWideType l_buf1[t_aMH][t_ColMemWords],
-		       MemWideType l_buf2[t_aMH][t_ColMemWords],
-		       MemWideType l_buf3[t_aMH][t_ColMemWords],
-		       MemStream& p_BlockStream) {
-add_blocks_4_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE II = t_ColMemWords
-add_blocks_4_inner:
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_word;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_word[k] = l_buf0[i][j][k] + l_buf1[i][j][k] + l_buf2[i][j][k] + l_buf3[i][j][k];
-		}
-		p_BlockStream.write(l_word);
-	    }
-	}
-      }
-
-      void SubBlocks(   MemStream& p_StreamA,
-          	    	MemStream& p_StreamB,
-          		MemStream& p_StreamC) {
-sub_blocks_outer:
-          for (int r = 0; r < t_aMH; ++r) {
-sub_blocks_inner:
-              for (int c = 0; c < t_ColMemWords; ++c) {
-// #pragma HLS PIPELINE II = t_MemWidth
-                  MemWideType l_wordA = p_StreamA.read();
-          	  MemWideType l_wordB = p_StreamB.read();
-          	  MemWideType l_wordC;
-          	  for (int i = 0; i < t_MemWidth; ++i) {
-          	      l_wordC[i] = l_wordA[i] - l_wordB[i];
-          	  }
-          	  p_StreamC.write(l_wordC);
-              }
-          }
       }
 
       // Splits the input stream into two output streams
@@ -744,79 +420,6 @@ extract_stream_loop:
 // #pragma HLS PIPELINE
 	      p_OutStream.write(p_InStream.read());
 	  }
-      }
-
-      /* @brief AddConsecutiveBlocks adds consecutive blocks of a matrix and writes the
-       * result to the output stream. The blocks are of sizes (l_numElements x (l_numMemWords * t_MemWidth)) elements
-       * @param p_InStream  the input stream contianing the two blocks contiguously streamed
-       * @param p_OutStream  the output stream
-       * @param l_numElements  the number of matrix elements along the rows of the block (i.e., height of the block)
-       * @param l_numMemWords  the number of memory words along the columns of the block (i.e., width of the block in MemWords)
-       */
-      void AddConsecutiveBlocks(MemStream& p_InStream,
-		      		MemStream& p_OutStream) {
-	   MemStream l_Ins1, l_Ins2;
-#pragma HLS STREAM variable=l_Ins1 depth=t_aMH * t_ColMemWords + 2// depth=l_numElements*l_numMemWords
-#pragma HLS STREAM variable=l_Ins2 depth=2//l_numElements*l_numMemWords
-#pragma HLS DATAFLOW
-	   SplitStream(p_InStream, l_Ins1, l_Ins2);
-	   AddBlocks(l_Ins1, l_Ins2, p_OutStream);
-      }
-
-      void SubConsecutiveBlocks(MemStream& p_InStream,
-		      		MemStream& p_OutStream) {
-	   MemStream l_Ins1, l_Ins2;
-#pragma HLS STREAM variable=l_Ins1 depth=t_aMH * t_ColMemWords + 2//l_numElements*l_numMemWords
-#pragma HLS STREAM variable=l_Ins2 depth=2
-#pragma HLS DATAFLOW
-// #pragma HLS STREAM variable=l_Ins2 depth=128//l_numElements*l_numMemWords
-	   SplitStream(p_InStream, l_Ins1, l_Ins2);
-	   SubBlocks(l_Ins1, l_Ins2, p_OutStream);
-      }
-
-      /* @brief AddSubmatrices adds two submatrices and writes the result to the output stream
-       * The submatrices are of sizes TODO
-       * @param p_InAddr  the base address of matrix in external memory
-       * @param p_OutAddr  the base address of matrix in external memory
-       * @param rowInd1  the row index of the first submatrix
-       * @param colInd1  the column index of the first submatrix
-       * @param rowInd2  the row index of the second submatrix
-       * @param colInd2  the column index of the second submatrix
-       * @param numRows  the number of rows in the matrix
-       * @param numCols  the number of columns in the matrix
-       */
-      void AddSubmatrices(MemIntType* p_InAddr,
-          	    	MemIntType* p_OutAddr,
-          	    	unsigned int rowInd1,
-          		unsigned int colInd1,
-          		unsigned int rowInd2,
-          		unsigned int colInd2,
-          		unsigned int numRows,
-          		unsigned int numCols) {
-          const unsigned int l_submatColBlocks = numCols / (2 * (t_MemWidth * t_ColMemWords));
-          const unsigned int l_submatRowBlocks = numRows / (2 * (t_MemWidth * t_RowMemWords));
-          MemStream l_Ins1, l_Ins2, l_Outs;
-          for (int l_submatRowBlock = 0; l_submatRowBlock < l_submatRowBlocks; ++l_submatRowBlock) {
-              for (int l_submatColBlock = 0; l_submatColBlock < l_submatColBlocks; ++l_submatColBlock) {
-          	ReadBlock(p_InAddr, 
-          		      2 * rowInd1 + l_submatRowBlock, 
-          		      2 * colInd1 + l_submatColBlock, 
-          		      t_MemWidth * t_RowMemWords,
-          		      t_ColMemWords, 
-          		      numCols / t_MemWidth, 
-          		      l_Ins1);
-          	ReadBlock(p_InAddr, 
-          		      2 * rowInd2 + l_submatRowBlock, 
-          		      2 * colInd2 + l_submatColBlock, 
-          		      t_MemWidth * t_RowMemWords,
-          		      t_ColMemWords, 
-          		      numCols / t_MemWidth, 
-          		      l_Ins2);
-          	AddBlocks(t_MemWidth * t_RowMemWords, t_ColMemWords, l_Ins1, l_Ins2, l_Outs);
-              }
-          }
-          // WriteMemStream(p_OutAddr, l_Outs, l_submatRowBlocks, l_submatColBlocks, numCols / (t_MemWidth));
-          WriteMemStream(p_OutAddr, l_Outs, 1, 1, numCols / (2 * t_MemWidth));
       }
 
       /**
@@ -863,50 +466,6 @@ extract_stream_loop:
 
 
 };
-
-
-template <typename MemIntType, typename MemWideType, typename MemStream,
-	  unsigned int t_MemWidth, unsigned int t_RowMemWords, unsigned int t_ColMemWords,
-	  unsigned int t_aMH, unsigned int p_numBlocks>
-void ReadAddBlocks(MemIntType* l_Addr,
-		   const unsigned int l_rowInd,
-		   const unsigned int l_colInd,
-		   const unsigned int l_wordLd,
-		   MemWideType l_buffer[2][2][t_aMH][t_ColMemWords],
-		   ap_uint<1> l_buf_valid[2][2],
-		   unsigned int* l_blk_idx_rows,
-		   unsigned int* l_blk_idx_cols,
-		   MemStream& p_BlockStream) {
-read_add_blocks_outer:
-	for (int i = 0; i < t_aMH; ++i) {
-#pragma HLS PIPELINE
-	    for (int j = 0; j < t_ColMemWords; ++j) {
-		MemWideType l_words[p_numBlocks];
-		for (int k = 0; k < p_numBlocks; ++k) {
-		    unsigned int l_SrcOffset = l_wordLd * t_aMH * ((l_rowInd << 1) + l_blk_idx_rows[k]) + ((l_colInd << 1) + l_blk_idx_cols[k]) * t_ColMemWords + i * l_wordLd + j;
-		    if (l_buf_valid[l_blk_idx_rows[k]][l_blk_idx_cols[k]]) {
-		        l_words[k] = l_buffer[l_blk_idx_rows[k]][l_blk_idx_cols[k]][i][j];
-		    } else {
-		        l_words[k] = l_Addr[l_SrcOffset];
-			l_buffer[l_blk_idx_rows[k]][l_blk_idx_cols[k]][i][j] = l_words[k];
-		    }
-		}
-		MemWideType l_outWord;
-		for (int k = 0; k < t_MemWidth; ++k) {
-		    l_outWord[k] = 0;;
-		    for (int l = 0; l < p_numBlocks; ++l) {
-			l_outWord[k] += l_words[l][k];
-		    }
-		}
-		p_BlockStream.write(l_outWord);
-	    }
-	}
-	for (int k = 0; k < p_numBlocks; ++k) {
-	    if (l_buf_valid[l_blk_idx_rows[k]][l_blk_idx_cols[k]] == 0) {
-	        l_buf_valid[l_blk_idx_rows[k]][l_blk_idx_cols[k]] = 1;
-	    }
-	}
-}
 
 }
 
