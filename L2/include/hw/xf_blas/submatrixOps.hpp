@@ -23,8 +23,8 @@ namespace blas {
 template <typename t_FloatType,
 	  unsigned int t_MemWidth,
 	  unsigned int t_RowMemWords,  // Number of memory words in one column of submatrix buffer
-	  unsigned int t_ColMemWords  // Number of memory words in one row of submatrix buffer
-	  >
+	  unsigned int t_ColMemWords,  // Number of memory words in one row of submatrix buffer
+	  unsigned int t_StrassensFactor>
 class SubMatrixOps {
     public:
       typedef WideType<t_FloatType, t_MemWidth> MemWideType;
@@ -33,8 +33,6 @@ class SubMatrixOps {
       
       typedef hls::stream<typename TaggedWideType<t_FloatType, t_MemWidth>::t_TypeInt> EdgeStream;
       static const unsigned int t_aMH = t_MemWidth * t_RowMemWords;
-      static const unsigned int t_2aMH = 2 * t_aMH;
-      static const unsigned int t_2ColMemWords = 2 * t_ColMemWords;
 
     /* Read block of matrix from memory into p_BlockStream. The matrix is of size l_numElements x (l_numMemWords*t_MemWidth)
     // The block is located at row l_rowInd and col l_colInd in the matrix. The matrix is stored in row-major format.
@@ -110,26 +108,26 @@ read_and_buffer_complete_outer:
 	  }
       }
 
-      void ReadToBuffer_4x4(     MemIntType* l_Addr,
-		      		 const unsigned int l_rowInd,
-				 const unsigned int l_colInd,
-				 const unsigned int l_wordLd,
-		      		 MemWideType l_buf[4*4*t_aMH*t_ColMemWords]) {
+      void ReadToBuffer(    MemIntType* l_Addr,
+		      	    const unsigned int l_rowInd,
+			    const unsigned int l_colInd,
+			    const unsigned int l_wordLd,
+		            MemWideType l_buf[t_StrassensFactor*t_StrassensFactor*t_aMH*t_ColMemWords]) {
 read_and_buffer_complete_outer:
-	  for (unsigned int i = 0; i < 4; ++i) {
+	  for (unsigned int i = 0; i < t_StrassensFactor; ++i) {
 	      for (unsigned int k = 0; k < t_aMH; ++k) {
-	          for (unsigned int j = 0; j < 4; ++j) {
+	          for (unsigned int j = 0; j < t_StrassensFactor; ++j) {
 	              for (unsigned int l = 0; l < t_ColMemWords; ++l) {
 #pragma HLS PIPELINE II = 1
-			  unsigned int src_idx = l_rowInd * 4 * t_aMH * l_wordLd + 
-				  		 l_colInd * 4 * t_ColMemWords + 
+			  unsigned int src_idx = l_rowInd * t_StrassensFactor * t_aMH * l_wordLd + 
+				  		 l_colInd * t_StrassensFactor * t_ColMemWords + 
 						 i * (t_aMH * l_wordLd) + 
 						 (j * t_ColMemWords) + 
 						 k * l_wordLd + 
 						 l;
-			  unsigned int dst_idx = i * 4 * t_aMH * t_ColMemWords + 
+			  unsigned int dst_idx = i * t_StrassensFactor * t_aMH * t_ColMemWords + 
 				  		 j * t_ColMemWords +
-						 k * 4 * t_ColMemWords +
+						 k * t_StrassensFactor * t_ColMemWords +
 						 l;
 			  MemWideType l_word = l_Addr[src_idx];
 			  l_buf[dst_idx] = l_word;
@@ -139,15 +137,14 @@ read_and_buffer_complete_outer:
 	  }
       }
 
-      void AddBlocks_2(MemIntType* l_Addr,
-		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
-			   const unsigned int l_buf0_blk_row,
-			   const unsigned int l_buf0_blk_col,
-			   const bool l_buf0_sign,
-			   const unsigned int l_buf1_blk_row,
-			   const unsigned int l_buf1_blk_col,
-			   const bool l_buf1_sign,
-			   MemStream& p_BlockStream) {
+      void AddBlocks_2(MemWideType l_buf[t_StrassensFactor*t_StrassensFactor*t_aMH*t_ColMemWords],
+		       const unsigned int l_buf0_blk_row,
+			const unsigned int l_buf0_blk_col,
+			const bool l_buf0_sign,
+			const unsigned int l_buf1_blk_row,
+			const unsigned int l_buf1_blk_col,
+			const bool l_buf1_sign,
+			MemStream& p_BlockStream) {
 read_add_buffer_2_outer:
 	for (int i = 0; i < t_aMH; ++i) {
 #pragma HLS PIPELINE II = 2 * t_ColMemWords
@@ -155,13 +152,13 @@ read_add_buffer_2_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
 		MemWideType l_word(0);
 		for (int k = 0; k < t_MemWidth; ++k) {
-		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset0 = l_buf0_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
-						i * 4 * t_ColMemWords + 
+						i * t_StrassensFactor * t_ColMemWords + 
 						j;
-		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset1 = l_buf1_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
@@ -180,8 +177,7 @@ read_add_buffer_2_inner:
 	}
       }
 
-      void AddBlocks_3(    MemIntType* l_Addr,
-		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
+      void AddBlocks_3(MemWideType l_buf[t_StrassensFactor*t_StrassensFactor*t_aMH*t_ColMemWords],
 			   const unsigned int l_buf0_blk_row,
 			   const unsigned int l_buf0_blk_col,
 			   const bool l_buf0_sign,
@@ -199,17 +195,17 @@ read_add_buffer_3_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
 		MemWideType l_word(0);
 		for (int k = 0; k < t_MemWidth; ++k) {
-		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset0 = l_buf0_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
-						i * 4 * t_ColMemWords + 
+						i * t_StrassensFactor * t_ColMemWords + 
 						j;
-		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset1 = l_buf1_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
-		    unsigned int l_srcOffset2 = l_buf2_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset2 = l_buf2_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf2_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
@@ -233,8 +229,7 @@ read_add_buffer_3_inner:
 	}
       }
 
-      void AddBlocks_4(    MemIntType* l_Addr,
-		  	   MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
+      void AddBlocks_4(    MemWideType l_buf[t_StrassensFactor*t_StrassensFactor*t_aMH*t_ColMemWords],
 			   const unsigned int l_buf0_blk_row,
 			   const unsigned int l_buf0_blk_col,
 			   const bool l_buf0_sign,
@@ -255,21 +250,21 @@ addblocks_4_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
 		MemWideType l_word(0);
 		for (int k = 0; k < t_MemWidth; ++k) {
-		    unsigned int l_srcOffset0 = l_buf0_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset0 = l_buf0_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf0_blk_col * t_ColMemWords + 
-						i * 4 * t_ColMemWords + 
+						i * t_StrassensFactor * t_ColMemWords + 
 						j;
-		    unsigned int l_srcOffset1 = l_buf1_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset1 = l_buf1_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf1_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
-		    unsigned int l_srcOffset2 = l_buf2_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset2 = l_buf2_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf2_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
-		    unsigned int l_srcOffset3 = l_buf3_blk_row * 4 * t_aMH * t_ColMemWords + 
+		    unsigned int l_srcOffset3 = l_buf3_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 			    			l_buf3_blk_col * t_ColMemWords +
-						i * 4 * t_ColMemWords +
+						i * t_StrassensFactor * t_ColMemWords +
 						j;
 		    if (l_buf0_sign) {
 		       l_word[k] += l_buf[l_srcOffset0][k];
@@ -298,7 +293,7 @@ addblocks_4_inner:
 	}
       }
 
-      void BufferToStream(MemWideType l_buf[4*4*t_aMH*t_ColMemWords],
+      void BufferToStream(MemWideType l_buf[t_StrassensFactor*t_StrassensFactor*t_aMH*t_ColMemWords],
 		      	  const unsigned int l_blk_row,
 			  const unsigned int l_blk_col,
 		       	  MemStream& p_BlockStream) {
@@ -307,9 +302,9 @@ get_factor_outer:
 #pragma HLS PIPELINE II = t_ColMemWords
 get_factor_inner:
 	    for (int j = 0; j < t_ColMemWords; ++j) {
-		unsigned int src_idx = l_blk_row * 4 * t_aMH * t_ColMemWords + 
+		unsigned int src_idx = l_blk_row * t_StrassensFactor * t_aMH * t_ColMemWords + 
 				       l_blk_col * t_ColMemWords + 
-				       i * 4 * t_ColMemWords + 
+				       i * t_StrassensFactor * t_ColMemWords + 
 				       j;
 		MemIntType l_word = l_buf[src_idx];
 		p_BlockStream.write(l_word);
@@ -348,16 +343,16 @@ read_add_sub_block_inner:
 		       const unsigned int l_colInd,
 		       const unsigned int l_wordLd,
 		       MemStream& p_BlockStream) {
-	for (int i = 0; i < 4; ++i) {
+	for (int i = 0; i < t_StrassensFactor; ++i) {
 write_output_loop_tamh:
 	    for (int k = 0; k < t_aMH; ++k) {
-	        for (int j = 0; j < 4; ++j) {
+	        for (int j = 0; j < t_StrassensFactor; ++j) {
 #pragma HLS PIPELINE II = t_ColMemWords
 		    for (int l = 0; l < t_ColMemWords; ++l) {
 		        // The data in the p_BlockStream comes block by block, there are a total of 4x4 blocks,
 		        // each of size t_aMH x t_ColMemWords. The data is written to the external memory at the appropriate location
 		        // The data is written in row-major format.
-		        unsigned int l_DstOffset = l_wordLd * (4 * t_aMH) * l_rowInd + l_colInd * (4 * t_ColMemWords) + (i * t_aMH * l_wordLd) + (j * t_ColMemWords) + k * l_wordLd + l;
+		        unsigned int l_DstOffset = l_wordLd * (t_StrassensFactor * t_aMH) * l_rowInd + l_colInd * (t_StrassensFactor * t_ColMemWords) + (i * t_aMH * l_wordLd) + (j * t_ColMemWords) + k * l_wordLd + l;
 			MemIntType l_word = p_BlockStream.read();
 			MemWideType l_word_wide = l_word;
 			l_Addr[l_DstOffset] = l_word;
@@ -372,8 +367,8 @@ write_output_loop_tamh:
 		       const unsigned int l_colInd,
 		       const unsigned int l_wordLd,
 		       MemStream& p_BlockStream) {
-	for (int i = 0; i < 4; ++i) {
-	    for (int j = 0; j < 4; ++j) {
+	for (int i = 0; i < t_StrassensFactor; ++i) {
+	    for (int j = 0; j < t_StrassensFactor; ++j) {
 		for (int p = 0; p < t_ColMemWords; ++p) {
 write_output_loop_colmemwords:
 		    for (int l = 0; l < t_ColMemWords; ++l) {
@@ -382,7 +377,7 @@ write_output_loop_colmemwords:
 		        // The data in the p_BlockStream comes block by block, there are a total of 4x4 blocks,
 		        // each of size t_aMH x t_ColMemWords. The data is written to the external memory at the appropriate location
 		        // The data is written in row-major format.
-			unsigned int l_DstOffset = l_wordLd * (4 * t_aMH) * l_rowInd + l_colInd * (4 * t_ColMemWords) + (i * t_aMH * l_wordLd) + (j * t_ColMemWords) + (k + p * t_MemWidth) * l_wordLd + l; // p * l_wordLd + l;
+			unsigned int l_DstOffset = l_wordLd * (t_StrassensFactor * t_aMH) * l_rowInd + l_colInd * (t_StrassensFactor * t_ColMemWords) + (i * t_aMH * l_wordLd) + (j * t_ColMemWords) + (k + p * t_MemWidth) * l_wordLd + l; // p * l_wordLd + l;
 			MemIntType l_word = p_BlockStream.read();
 			MemWideType l_word_wide = l_word;
 			l_Addr[l_DstOffset] = l_word;
