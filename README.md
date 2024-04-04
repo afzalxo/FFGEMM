@@ -18,16 +18,19 @@ The code should work on U250 and U200 as well but has not been tested.
 ```bash
 cd L2/tests/gemm_1CU
 ```
+
 2. If running on board and making the FPGA bitstream from scratch, run the following command (Might take hours):
 ```bash
 make all TARGET=hw PLATFORM=<path/to/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm>
 ```
 This will build both the FPGA bitstream and the host executable.
+
 3. If running on board and using the pre-built FPGA bitstream provided in this repository, first modify the `params.mk` file to use the datatype you desire. Please see the `params.mk` file for more information. After the data type is set as needed, run the following command to build the host executable:
 ```bash
 make host TARGET=hw PLATFORM=<path/to/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm>
 ```
 This will only build the host executable and is fast.
+
 4. For running `sw_emu` or `hw_emu`, run the following command.
 ```bash
 make run TARGET=<sw_emu/hw_emu> PLATFORM=<path/to/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm>
@@ -35,8 +38,10 @@ make run TARGET=<sw_emu/hw_emu> PLATFORM=<path/to/xilinx_u50_gen3x16_xdma_5_2022
 
 By default, the `Makefile` is using the `conn_u50.cfg` file in the `gemm_1CU` directory which is using HBM[0:7]. The file name and its contents can be modified according to the user's needs. E.g., If running on U280, then subtitute `conn_u50.cfg` with `conn_u280.cfg` in `Makefile` and modify the contents of `conn_u280.cfg` to use HBM[0:7] or DDR[0] as needed.
 
-After the make is successful, the `gemm_1CU` directory will contain two new directories `_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1` and `build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1`. 
+After make is successful, the `gemm_1CU` directory will contain two new directories `_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1` and `build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1`. 
+
 The former contains the implemented design which can be opened in vivado (Search for the `*.xpr` file in the directory). 
+
 The latter contains the host executable in case only the host was built (Using step 3), or both the host executable and the FPGA bitstream in case the FPGA bitstream was built (In step 2). The host executable is named `api_gemm.exe` and the FPGA bitstream is named `blasKernel.xclbin`. The file `blasKernel.xclbin.info` contains some details about the implemented kernel such as the memory interfaces it is using and its achieved frequency.
 
 To run the host/FPGA-binary, go to the build directory (i.e., one with the prefix `build_dir.`) and run the following:
@@ -62,6 +67,7 @@ The source code is structured as follows:
 - `L1` contains the source code for the L1 operations (e.g., L1 GeMM, transpose, double buffer)
 - `L2` contains the source code for both the baseline Vitis L2 GeMM kernel and our Strassen's Squared kernel. The kernel codes are located in `L2/include/hw/xf_blas/` directory. L2 modules use L1 wrappers to perform their tasks.
 - Host code is located in `L2/src/sw/` directory and its includes are in `L2/include/sw/` directory.
+- `prebuilt_bitstreams` contains the pre-built FPGA bitstreams evaluated in the paper. The bitstreams have the file name `blasKernel.xclbin` and can be executed using the host executable that the user has to compile on their own machine using step 3 above.
 
 ## Acknowledgements
 To be populated.

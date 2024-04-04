@@ -1,0 +1,1711 @@
+<ENTRY>
+{
+ "thisFile": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:00 2024",
+ "timestampMillis": "1711421820522",
+ "buildStep": {
+  "cmdId": "fd519335-f694-40c9-80e5-d6e658a3d425",
+  "name": "v++",
+  "logFile": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/link.steps.log",
+  "commandLine": "/home/aahmadaa/Vitis2023/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --vivado.prop run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true --vivado.param project.writeIntermediateCheckpoints=1 --advanced.misc \"report=type report_utilization name synth_report_utilization_summary steps {synth_design} runs {__KERNEL__} options {}\" --advanced.misc \"report=type report_utilization name impl_report_utilization_init_design_summary steps {init_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_init_design_summary steps {init_design} runs {impl_1} options {-max_paths 10}\" --advanced.param \"compiler.reportFailfast=pre_opt_design {__KERNEL_NAMES__} post_opt_design {__OCL_TOP__} post_route_design {__SLR__}\" --advanced.param \"compiler.reportQorAssessment=pre_opt_design {} post_opt_design {} post_route_design {}\" --advanced.misc \"report=type report_io name impl_report_io_place_design_summary steps {place_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_utilization name impl_report_utilization_place_design_summary steps {place_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_control_sets name impl_report_control_sets_place_design_summary steps {place_design} runs {impl_1} options {-verbose}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_place_design_summary steps {place_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_drc name impl_report_drc_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_methodology name impl_report_methodology_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_power name impl_report_power_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_route_status name impl_report_route_status_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_clock_utilization name impl_report_clock_utilization_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_bus_skew name impl_report_bus_skew_route_design_summary steps {route_design} runs {impl_1} options {-warn_on_violation}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -g -l -D TEST_MEMCPY=0 -D BLAS_instructionSizeBytes=64 -D BLAS_dataType=int16_t -D BLAS_dataEqIntType=int16_t -D BLAS_memWidth=16 -D BLAS_argInstrWidth=2 -D BLAS_numInstr=64 -D BLAS_argPipeline=2 -D BLAS_runTransp=0 -D BLAS_runGemv=0 -D BLAS_runGemm=1 -D BLAS_runFcn=0 -D BLAS_numKernels=1 -D BLAS_CACHE=0 -D BLAS_XVEC=0 -D BLAS_gemmMBlocks=4 -D BLAS_gemmKBlocks=4 -D BLAS_gemmNBlocks=4 -D BLAS_XdataType=int16_t -D BLAS_XmemWidth=16 -D AP_INT_MAX_W=1026 -t hw --platform /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm --save-temps --hls.jobs 4 --config /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/conn_u50.cfg -I /home/aahmadaa/blocked_systolic_array/src/L1/include/hw -I /home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas -I /home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas/gemm -I /home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas/helpers/utils -I /home/aahmadaa/blocked_systolic_array/src/L2/include -I /home/aahmadaa/blocked_systolic_array/src/L2/include/hw/xf_blas -I /home/aahmadaa/blocked_systolic_array/src/L1/include/hw --temp_dir _x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz --report_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas --optimize 2 -R 2 --kernel_frequency 275 --config opts.cfg -o build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin _x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blasKernel.xo ",
+  "args": [
+   "-g",
+   "-l",
+   "-D",
+   "TEST_MEMCPY=0",
+   "-D",
+   "BLAS_instructionSizeBytes=64",
+   "-D",
+   "BLAS_dataType=int16_t",
+   "-D",
+   "BLAS_dataEqIntType=int16_t",
+   "-D",
+   "BLAS_memWidth=16",
+   "-D",
+   "BLAS_argInstrWidth=2",
+   "-D",
+   "BLAS_numInstr=64",
+   "-D",
+   "BLAS_argPipeline=2",
+   "-D",
+   "BLAS_runTransp=0",
+   "-D",
+   "BLAS_runGemv=0",
+   "-D",
+   "BLAS_runGemm=1",
+   "-D",
+   "BLAS_runFcn=0",
+   "-D",
+   "BLAS_numKernels=1",
+   "-D",
+   "BLAS_CACHE=0",
+   "-D",
+   "BLAS_XVEC=0",
+   "-D",
+   "BLAS_gemmMBlocks=4",
+   "-D",
+   "BLAS_gemmKBlocks=4",
+   "-D",
+   "BLAS_gemmNBlocks=4",
+   "-D",
+   "BLAS_XdataType=int16_t",
+   "-D",
+   "BLAS_XmemWidth=16",
+   "-D",
+   "AP_INT_MAX_W=1026",
+   "-t",
+   "hw",
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+   "--save-temps",
+   "--hls.jobs",
+   "4",
+   "--config",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/conn_u50.cfg",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L1/include/hw",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas/gemm",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L1/include/hw/xf_blas/helpers/utils",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/include",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/include/hw/xf_blas",
+   "-I",
+   "/home/aahmadaa/blocked_systolic_array/src/L1/include/hw",
+   "--temp_dir",
+   "_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz",
+   "--report_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas",
+   "--optimize",
+   "2",
+   "-R",
+   "2",
+   "--kernel_frequency",
+   "275",
+   "--config",
+   "opts.cfg",
+   "-o",
+   "build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin",
+   "_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blasKernel.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/conn_u50.cfg",
+    "content": "[connectivity]\n\nnk=blasKernel:1:blasKernel_0\nsp=blasKernel_0.m_axi_gmemm:HBM[0:7]\n"
+   },
+   {
+    "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/opts.cfg",
+    "content": "[vivado]\nparam=project.writeIntermediateCheckpoints=1\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=ExtraTimingOpt\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\nprop=run.impl_1.{STEPS.ROUTE_DESIGN.ARGS.MORE OPTIONS}={-tns_cleanup}\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:00 2024",
+ "timestampMillis": "1711421820522",
+ "status": {
+  "cmdId": "fd519335-f694-40c9-80e5-d6e658a3d425",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Mar 26 10:57:05 2024",
+ "timestampMillis": "1711421825633",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "blas",
+    "file": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "blasKernel",
+     "file": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blasKernel.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xo/blasKernel/blasKernel/cpu_sources/kernel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "blasKernel_0"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:05 2024",
+ "timestampMillis": "1711421825961",
+ "buildStep": {
+  "cmdId": "b5c00606-ae83-47b0-b154-94c735ee0c44",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blasKernel.xo -keep --config /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm --target hw --output_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int --temp_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blasKernel.xo",
+   "-keep",
+   "--config",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int",
+   "--temp_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/syslinkConfig.ini",
+    "content": "nk=blasKernel:1:blasKernel_0\nsp=blasKernel_0.m_axi_gmemm:HBM[0:7]\n\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:05 2024",
+ "timestampMillis": "1711421825962",
+ "status": {
+  "cmdId": "b5c00606-ae83-47b0-b154-94c735ee0c44",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:28 2024",
+ "timestampMillis": "1711421848053",
+ "status": {
+  "cmdId": "b5c00606-ae83-47b0-b154-94c735ee0c44",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:28 2024",
+ "timestampMillis": "1711421848054",
+ "buildStep": {
+  "cmdId": "bd8c38e7-6cf8-484c-a47b-78f973954d25",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/sdsl.dat -rtd /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/cf2sw.rtd -nofilter /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/cf2sw_full.rtd -xclbin /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.xml -o /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/sdsl.dat",
+   "-rtd",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:28 2024",
+ "timestampMillis": "1711421848055",
+ "status": {
+  "cmdId": "bd8c38e7-6cf8-484c-a47b-78f973954d25",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:32 2024",
+ "timestampMillis": "1711421852910",
+ "status": {
+  "cmdId": "bd8c38e7-6cf8-484c-a47b-78f973954d25",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:32 2024",
+ "timestampMillis": "1711421852911",
+ "buildStep": {
+  "cmdId": "d76305d8-99cb-4412-bd2e-35105d47056b",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:32 2024",
+ "timestampMillis": "1711421852911",
+ "status": {
+  "cmdId": "d76305d8-99cb-4412-bd2e-35105d47056b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 10:57:33 2024",
+ "timestampMillis": "1711421853270",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:33 2024",
+ "timestampMillis": "1711421853270",
+ "status": {
+  "cmdId": "d76305d8-99cb-4412-bd2e-35105d47056b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:33 2024",
+ "timestampMillis": "1711421853271",
+ "buildStep": {
+  "cmdId": "539f3807-741e-4e36-854a-1ce34fed52ec",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm -s -g --kernel_frequency 275 --remote_ip_cache /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/.ipcache --output_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int --log_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/logs/link --report_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link --config /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/vplConfig.ini -k /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link --no-info --iprepo /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0 --messageDb /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/run_link/vpl.pb /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+   "-s",
+   "-g",
+   "--kernel_frequency",
+   "275",
+   "--remote_ip_cache",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/.ipcache",
+   "--output_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int",
+   "--log_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/logs/link",
+   "--report_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link",
+   "--config",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/vplConfig.ini",
+   "-k",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link",
+   "--no-info",
+   "--iprepo",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0",
+   "--messageDb",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/run_link/vpl.pb",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_utilization name synth_report_utilization_summary steps {synth_design} runs {__KERNEL__} options {}\nmisc=report=type report_utilization name impl_report_utilization_init_design_summary steps {init_design} runs {impl_1} options {}\nmisc=report=type report_timing_summary name impl_report_timing_summary_init_design_summary steps {init_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.reportFailfast=pre_opt_design {__KERNEL_NAMES__} post_opt_design {__OCL_TOP__} post_route_design {__SLR__}\nparam=compiler.reportQorAssessment=pre_opt_design {} post_opt_design {} post_route_design {}\nmisc=report=type report_io name impl_report_io_place_design_summary steps {place_design} runs {impl_1} options {}\nmisc=report=type report_utilization name impl_report_utilization_place_design_summary steps {place_design} runs {impl_1} options {}\nmisc=report=type report_control_sets name impl_report_control_sets_place_design_summary steps {place_design} runs {impl_1} options {-verbose}\nmisc=report=type report_timing_summary name impl_report_timing_summary_place_design_summary steps {place_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_drc name impl_report_drc_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_methodology name impl_report_methodology_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_power name impl_report_power_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_route_status name impl_report_route_status_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_clock_utilization name impl_report_clock_utilization_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_bus_skew name impl_report_bus_skew_route_design_summary steps {route_design} runs {impl_1} options {-warn_on_violation}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=hw_emu.enableProfiling=1\nparam=compiler.vppCurrentWorkingDir=/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU\nmisc=BinaryName=blas\n\n[connectivity]\nnk=blasKernel:1:blasKernel_0\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nparam=project.writeIntermediateCheckpoints=1\nparam=project.writeIntermediateCheckpoints=1\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=ExtraTimingOpt\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\nprop=run.impl_1.{STEPS.ROUTE_DESIGN.ARGS.MORE OPTIONS}={-tns_cleanup}\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:33 2024",
+ "timestampMillis": "1711421853272",
+ "status": {
+  "cmdId": "539f3807-741e-4e36-854a-1ce34fed52ec",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:34 2024",
+ "timestampMillis": "1711421854570",
+ "buildStep": {
+  "cmdId": "8891ea3f-3121-4e7e-a1cb-677b80de2b6a",
+  "name": "vpl",
+  "logFile": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/link.steps.log",
+  "commandLine": "/home/aahmadaa/Vitis2023/Vitis/2023.2/bin/unwrapped/lnx64.o/vpl -t hw -f /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm -s -g --kernel_frequency 275 --remote_ip_cache /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/.ipcache --output_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int --log_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/logs/link --report_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link --config /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/vplConfig.ini -k /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link --no-info --iprepo /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0 --messageDb /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/run_link/vpl.pb /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:34 2024",
+ "timestampMillis": "1711421854570",
+ "status": {
+  "cmdId": "8891ea3f-3121-4e7e-a1cb-677b80de2b6a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Tue Mar 26 10:57:38 2024",
+ "timestampMillis": "1711421858655",
+ "vivadoProject": {
+  "openDir": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 10:57:38 2024",
+ "timestampMillis": "1711421858656",
+ "buildStep": {
+  "cmdId": "112d7136-d023-4354-9b2a-bf0bff9de145",
+  "name": "vivado",
+  "logFile": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 10:57:38 2024",
+ "timestampMillis": "1711421858656",
+ "status": {
+  "cmdId": "112d7136-d023-4354-9b2a-bf0bff9de145",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 10:59:02 2024",
+ "timestampMillis": "1711421942339",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/automation_summary_pre_synthesis.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Mar 26 11:07:58 2024",
+ "timestampMillis": "1711422478599",
+ "buildStep": {
+  "cmdId": "a527af26-af02-4bcc-9e70-94a060f7a74c",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 11:07:58 2024",
+ "timestampMillis": "1711422478599",
+ "status": {
+  "cmdId": "a527af26-af02-4bcc-9e70-94a060f7a74c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Mar 26 11:07:58 2024",
+ "timestampMillis": "1711422478599",
+ "buildStep": {
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 11:07:58 2024",
+ "timestampMillis": "1711422478600",
+ "status": {
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 12:50:06 2024",
+ "timestampMillis": "1711428606788",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 12:51:33 2024",
+ "timestampMillis": "1711428693746",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 12:51:33 2024",
+ "timestampMillis": "1711428693747",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 12:57:07 2024",
+ "timestampMillis": "1711429027366",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 12:57:07 2024",
+ "timestampMillis": "1711429027369",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496205",
+ "status": {
+  "cmdId": "112d7136-d023-4354-9b2a-bf0bff9de145",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496232",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496232",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496233",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496233",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496234",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496234",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496234",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496235",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496235",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496236",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496236",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496236",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496237",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496237",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496237",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496238",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496239",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/syn/ulp_hmss_0_0_synth_1_ulp_hmss_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496239",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/syn/ulp_blasKernel_0_0_synth_1_ulp_blasKernel_0_0_utilization_synth.rpt",
+  "name": "blasKernel",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496240",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/syn/bd_85ad_interconnect1_0_0_synth_1_bd_85ad_interconnect1_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496240",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496240",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_init_report_utilization_0.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496277",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496311",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496312",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496313",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_io_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_IO",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496314",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_utilization_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496331",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_control_sets_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_CONTROL_SETS",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496363",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496384",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496386",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496387",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_drc_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_DRC",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496387",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_drc_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_DRC",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496395",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_methodology_drc_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_METHODOLOGY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496395",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_methodology_drc_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_METHODOLOGY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496396",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_power_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_POWER",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496437",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_power_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_POWER",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496437",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_route_status.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_ROUTE_STATUS",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496462",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496485",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496486",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496494",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_clock_utilization_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_CLOCK_UTILIZATION",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496497",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_bus_skew_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_BUS_SKEW",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496502",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_bus_skew_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_BUS_SKEW",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496530",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496548",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496549",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "986f85b4-5e05-4032-853b-682a3f5b9669"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496578",
+ "status": {
+  "cmdId": "8891ea3f-3121-4e7e-a1cb-677b80de2b6a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496590",
+ "status": {
+  "cmdId": "539f3807-741e-4e36-854a-1ce34fed52ec",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496591",
+ "buildStep": {
+  "cmdId": "da67ff64-5cd0-4470-accd-43375221619c",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496591",
+ "status": {
+  "cmdId": "da67ff64-5cd0-4470-accd-43375221619c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496605",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496607",
+ "buildStep": {
+  "cmdId": "a85785a5-31b6-423d-9eff-a71db25a7694",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/address_map.xml -sdsl /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/sdsl.dat -xclbin /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.xml -rtd /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.rtd -o /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.xml",
+  "args": [
+   "-a",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/address_map.xml",
+   "-sdsl",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.rtd",
+   "-o",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:04:56 2024",
+ "timestampMillis": "1711429496607",
+ "status": {
+  "cmdId": "a85785a5-31b6-423d-9eff-a71db25a7694",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500562",
+ "status": {
+  "cmdId": "a85785a5-31b6-423d-9eff-a71db25a7694",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500563",
+ "buildStep": {
+  "cmdId": "abe65853-548e-47d5-a327-a850e85de84a",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.rtd",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500563",
+ "status": {
+  "cmdId": "abe65853-548e-47d5-a327-a850e85de84a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500566",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500566",
+ "status": {
+  "cmdId": "abe65853-548e-47d5-a327-a850e85de84a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500566",
+ "buildStep": {
+  "cmdId": "be9ef152-9238-4b12-97c7-4ea7b5f5333d",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500567",
+ "status": {
+  "cmdId": "be9ef152-9238-4b12-97c7-4ea7b5f5333d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500567",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500568",
+ "status": {
+  "cmdId": "be9ef152-9238-4b12-97c7-4ea7b5f5333d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500568",
+ "status": {
+  "cmdId": "da67ff64-5cd0-4470-accd-43375221619c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500569",
+ "buildStep": {
+  "cmdId": "738462a3-5de3-473f-b307-a451479ce446",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section BITSTREAM:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.rtd --append-section :JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas_xml.rtd --add-section BUILD_METADATA:JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.xml --add-section SYSTEM_METADATA:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u280_gen3x16_xdma_1_202211_1 --output /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.rtd",
+   "--append-section",
+   ":JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/blas.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_u280_gen3x16_xdma_1_202211_1",
+   "--output",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500570",
+ "status": {
+  "cmdId": "738462a3-5de3-473f-b307-a451479ce446",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500691",
+ "status": {
+  "cmdId": "738462a3-5de3-473f-b307-a451479ce446",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500692",
+ "buildStep": {
+  "cmdId": "130191f5-1246-4c8b-8068-ee220b199ec3",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin.info --input /home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin.info",
+   "--input",
+   "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/build_dir.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/blas.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:00 2024",
+ "timestampMillis": "1711429500692",
+ "status": {
+  "cmdId": "130191f5-1246-4c8b-8068-ee220b199ec3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501154",
+ "status": {
+  "cmdId": "130191f5-1246-4c8b-8068-ee220b199ec3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501156",
+ "buildStep": {
+  "cmdId": "f771d6af-3e94-49e2-8a60-8ea7a035382b",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501156",
+ "status": {
+  "cmdId": "f771d6af-3e94-49e2-8a60-8ea7a035382b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501156",
+ "status": {
+  "cmdId": "f771d6af-3e94-49e2-8a60-8ea7a035382b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501227",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/system_estimate_blas.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501230",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501231",
+ "status": {
+  "cmdId": "fd519335-f694-40c9-80e5-d6e658a3d425",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501293",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u280_gen3x16_xdma_1_202211_1/blas/link/v++_link_blas_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Mar 26 13:05:01 2024",
+ "timestampMillis": "1711429501294",
+ "report": {
+  "path": "/home/aahmadaa/blocked_systolic_array/src/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u280_gen3x16_xdma_1_202211_1.int16.16memWidth.hbm.unconstrained.16burst.275mhz/v++_link_blas_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
