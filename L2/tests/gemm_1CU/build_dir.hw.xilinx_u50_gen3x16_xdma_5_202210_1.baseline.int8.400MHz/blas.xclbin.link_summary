@@ -1,0 +1,1669 @@
+<ENTRY>
+{
+ "thisFile": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu May  9 16:33:04 2024",
+ "timestampMillis": "1715243584499",
+ "buildStep": {
+  "cmdId": "44497860-3e90-4cad-b922-2e9a10396ae3",
+  "name": "v++",
+  "logFile": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/link.steps.log",
+  "commandLine": "/home/aahmadaa/Vitis2023/Vitis/2023.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --vivado.prop run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true --vivado.param project.writeIntermediateCheckpoints=1 --advanced.misc \"report=type report_utilization name synth_report_utilization_summary steps {synth_design} runs {__KERNEL__} options {}\" --advanced.misc \"report=type report_utilization name impl_report_utilization_init_design_summary steps {init_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_init_design_summary steps {init_design} runs {impl_1} options {-max_paths 10}\" --advanced.param \"compiler.reportFailfast=pre_opt_design {__KERNEL_NAMES__} post_opt_design {__OCL_TOP__} post_route_design {__SLR__}\" --advanced.param \"compiler.reportQorAssessment=pre_opt_design {} post_opt_design {} post_route_design {}\" --advanced.misc \"report=type report_io name impl_report_io_place_design_summary steps {place_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_utilization name impl_report_utilization_place_design_summary steps {place_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_control_sets name impl_report_control_sets_place_design_summary steps {place_design} runs {impl_1} options {-verbose}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_place_design_summary steps {place_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_drc name impl_report_drc_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_methodology name impl_report_methodology_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_power name impl_report_power_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_route_status name impl_report_route_status_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_clock_utilization name impl_report_clock_utilization_route_design_summary steps {route_design} runs {impl_1} options {}\" --advanced.misc \"report=type report_bus_skew name impl_report_bus_skew_route_design_summary steps {route_design} runs {impl_1} options {-warn_on_violation}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -g -l -D TEST_MEMCPY=0 -D BLAS_instructionSizeBytes=64 -D BLAS_dataType=int8_t -D BLAS_dataEqIntType=int8_t -D BLAS_memWidth=16 -D BLAS_argInstrWidth=4 -D BLAS_numInstr=64 -D BLAS_argPipeline=2 -D BLAS_runTransp=0 -D BLAS_runGemv=0 -D BLAS_runGemm=1 -D BLAS_runFcn=0 -D BLAS_numKernels=1 -D BLAS_CACHE=0 -D BLAS_XVEC=0 -D BLAS_gemmMBlocks=4 -D BLAS_gemmKBlocks=4 -D BLAS_gemmNBlocks=4 -D BLAS_XdataType=int8_t -D BLAS_XmemWidth=16 -D AP_INT_MAX_W=1026 -t hw --platform /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm --save-temps --hls.jobs 4 --config /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/conn_u50.cfg -I /home/aahmadaa/ffgemm/L1/include/hw -I /home/aahmadaa/ffgemm/L1/include/hw/xf_blas -I /home/aahmadaa/ffgemm/L1/include/hw/xf_blas/gemm -I /home/aahmadaa/ffgemm/L1/include/hw/xf_blas/helpers/utils -I /home/aahmadaa/ffgemm/L2/include -I /home/aahmadaa/ffgemm/L2/include/hw/xf_blas -I /home/aahmadaa/ffgemm/L1/include/hw --temp_dir _x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz --report_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas --optimize 2 -R 2 --kernel_frequency 400 --config opts.cfg -o build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin _x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blasKernel.xo ",
+  "args": [
+   "-g",
+   "-l",
+   "-D",
+   "TEST_MEMCPY=0",
+   "-D",
+   "BLAS_instructionSizeBytes=64",
+   "-D",
+   "BLAS_dataType=int8_t",
+   "-D",
+   "BLAS_dataEqIntType=int8_t",
+   "-D",
+   "BLAS_memWidth=16",
+   "-D",
+   "BLAS_argInstrWidth=4",
+   "-D",
+   "BLAS_numInstr=64",
+   "-D",
+   "BLAS_argPipeline=2",
+   "-D",
+   "BLAS_runTransp=0",
+   "-D",
+   "BLAS_runGemv=0",
+   "-D",
+   "BLAS_runGemm=1",
+   "-D",
+   "BLAS_runFcn=0",
+   "-D",
+   "BLAS_numKernels=1",
+   "-D",
+   "BLAS_CACHE=0",
+   "-D",
+   "BLAS_XVEC=0",
+   "-D",
+   "BLAS_gemmMBlocks=4",
+   "-D",
+   "BLAS_gemmKBlocks=4",
+   "-D",
+   "BLAS_gemmNBlocks=4",
+   "-D",
+   "BLAS_XdataType=int8_t",
+   "-D",
+   "BLAS_XmemWidth=16",
+   "-D",
+   "AP_INT_MAX_W=1026",
+   "-t",
+   "hw",
+   "--platform",
+   "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
+   "--save-temps",
+   "--hls.jobs",
+   "4",
+   "--config",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/conn_u50.cfg",
+   "-I",
+   "/home/aahmadaa/ffgemm/L1/include/hw",
+   "-I",
+   "/home/aahmadaa/ffgemm/L1/include/hw/xf_blas",
+   "-I",
+   "/home/aahmadaa/ffgemm/L1/include/hw/xf_blas/gemm",
+   "-I",
+   "/home/aahmadaa/ffgemm/L1/include/hw/xf_blas/helpers/utils",
+   "-I",
+   "/home/aahmadaa/ffgemm/L2/include",
+   "-I",
+   "/home/aahmadaa/ffgemm/L2/include/hw/xf_blas",
+   "-I",
+   "/home/aahmadaa/ffgemm/L1/include/hw",
+   "--temp_dir",
+   "_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz",
+   "--report_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas",
+   "--optimize",
+   "2",
+   "-R",
+   "2",
+   "--kernel_frequency",
+   "400",
+   "--config",
+   "opts.cfg",
+   "-o",
+   "build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin",
+   "_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blasKernel.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/conn_u50.cfg",
+    "content": "[connectivity]\n\nnk=blasKernel:1:blasKernel_0\nsp=blasKernel_0.m_axi_gmemm:HBM[0]\n"
+   },
+   {
+    "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/opts.cfg",
+    "content": "[vivado]\nparam=project.writeIntermediateCheckpoints=1\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=ExtraTimingOpt\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\nprop=run.impl_1.{STEPS.ROUTE_DESIGN.ARGS.MORE OPTIONS}={-tns_cleanup}\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:04 2024",
+ "timestampMillis": "1715243584499",
+ "status": {
+  "cmdId": "44497860-3e90-4cad-b922-2e9a10396ae3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu May  9 16:33:08 2024",
+ "timestampMillis": "1715243588896",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "blas",
+    "file": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "blasKernel",
+     "file": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blasKernel.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xo/blasKernel/blasKernel/cpu_sources/kernel.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "blasKernel_0"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2023.2. SW Build 4026344 on 2023-10-11-15:42:10"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 16:33:09 2024",
+ "timestampMillis": "1715243589169",
+ "buildStep": {
+  "cmdId": "fb89522b-01c5-4340-9c9d-8dcc8046b6d0",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blasKernel.xo -keep --config /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm --target hw --output_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int --temp_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blasKernel.xo",
+   "-keep",
+   "--config",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int",
+   "--temp_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/syslinkConfig.ini",
+    "content": "nk=blasKernel:1:blasKernel_0\nsp=blasKernel_0.m_axi_gmemm:HBM[0]\n\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:09 2024",
+ "timestampMillis": "1715243589169",
+ "status": {
+  "cmdId": "fb89522b-01c5-4340-9c9d-8dcc8046b6d0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:25 2024",
+ "timestampMillis": "1715243605366",
+ "status": {
+  "cmdId": "fb89522b-01c5-4340-9c9d-8dcc8046b6d0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 16:33:25 2024",
+ "timestampMillis": "1715243605369",
+ "buildStep": {
+  "cmdId": "4c6a7dbc-a1e8-4c3a-b904-1213e33678c3",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/sdsl.dat -rtd /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/cf2sw.rtd -nofilter /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/cf2sw_full.rtd -xclbin /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.xml -o /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/sdsl.dat",
+   "-rtd",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:25 2024",
+ "timestampMillis": "1715243605369",
+ "status": {
+  "cmdId": "4c6a7dbc-a1e8-4c3a-b904-1213e33678c3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608253",
+ "status": {
+  "cmdId": "4c6a7dbc-a1e8-4c3a-b904-1213e33678c3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608255",
+ "buildStep": {
+  "cmdId": "e6c73d9e-f924-4a3e-9b39-9b815a685ede",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608255",
+ "status": {
+  "cmdId": "e6c73d9e-f924-4a3e-9b39-9b815a685ede",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608543",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608543",
+ "status": {
+  "cmdId": "e6c73d9e-f924-4a3e-9b39-9b815a685ede",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608544",
+ "buildStep": {
+  "cmdId": "06519652-d851-4c8b-b890-871c515c4f7f",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm -s -g --kernel_frequency 400 --remote_ip_cache /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/.ipcache --output_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int --log_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/logs/link --report_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link --config /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/vplConfig.ini -k /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link --no-info --iprepo /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0 --messageDb /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/run_link/vpl.pb /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
+   "-s",
+   "-g",
+   "--kernel_frequency",
+   "400",
+   "--remote_ip_cache",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/.ipcache",
+   "--output_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int",
+   "--log_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/logs/link",
+   "--report_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link",
+   "--config",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/vplConfig.ini",
+   "-k",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link",
+   "--no-info",
+   "--iprepo",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0",
+   "--messageDb",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/run_link/vpl.pb",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_utilization name synth_report_utilization_summary steps {synth_design} runs {__KERNEL__} options {}\nmisc=report=type report_utilization name impl_report_utilization_init_design_summary steps {init_design} runs {impl_1} options {}\nmisc=report=type report_timing_summary name impl_report_timing_summary_init_design_summary steps {init_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.reportFailfast=pre_opt_design {__KERNEL_NAMES__} post_opt_design {__OCL_TOP__} post_route_design {__SLR__}\nparam=compiler.reportQorAssessment=pre_opt_design {} post_opt_design {} post_route_design {}\nmisc=report=type report_io name impl_report_io_place_design_summary steps {place_design} runs {impl_1} options {}\nmisc=report=type report_utilization name impl_report_utilization_place_design_summary steps {place_design} runs {impl_1} options {}\nmisc=report=type report_control_sets name impl_report_control_sets_place_design_summary steps {place_design} runs {impl_1} options {-verbose}\nmisc=report=type report_timing_summary name impl_report_timing_summary_place_design_summary steps {place_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_drc name impl_report_drc_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_methodology name impl_report_methodology_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_power name impl_report_power_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_route_status name impl_report_route_status_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_clock_utilization name impl_report_clock_utilization_route_design_summary steps {route_design} runs {impl_1} options {}\nmisc=report=type report_bus_skew name impl_report_bus_skew_route_design_summary steps {route_design} runs {impl_1} options {-warn_on_violation}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=hw_emu.enableProfiling=1\nparam=compiler.vppCurrentWorkingDir=/home/aahmadaa/ffgemm/L2/tests/gemm_1CU\nmisc=BinaryName=blas\n\n[connectivity]\nnk=blasKernel:1:blasKernel_0\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nparam=project.writeIntermediateCheckpoints=1\nparam=project.writeIntermediateCheckpoints=1\nprop=run.impl_1.STEPS.OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\nprop=run.impl_1.STEPS.PLACE_DESIGN.ARGS.DIRECTIVE=ExtraTimingOpt\nprop=run.impl_1.STEPS.ROUTE_DESIGN.ARGS.DIRECTIVE=AggressiveExplore\nprop=run.impl_1.{STEPS.ROUTE_DESIGN.ARGS.MORE OPTIONS}={-tns_cleanup}\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED=true\nprop=run.impl_1.STEPS.POST_ROUTE_PHYS_OPT_DESIGN.ARGS.DIRECTIVE=Explore\n\n"
+   }
+  ],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:28 2024",
+ "timestampMillis": "1715243608545",
+ "status": {
+  "cmdId": "06519652-d851-4c8b-b890-871c515c4f7f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu May  9 16:33:29 2024",
+ "timestampMillis": "1715243609840",
+ "buildStep": {
+  "cmdId": "33ff67b7-fa4d-4e8a-a851-7cee90ff89c6",
+  "name": "vpl",
+  "logFile": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/link.steps.log",
+  "commandLine": "/home/aahmadaa/Vitis2023/Vitis/2023.2/bin/unwrapped/lnx64.o/vpl -t hw -f /opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1/xilinx_u50_gen3x16_xdma_5_202210_1.xpfm -s -g --kernel_frequency 400 --remote_ip_cache /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/.ipcache --output_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int --log_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/logs/link --report_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link --config /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/vplConfig.ini -k /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link --no-info --iprepo /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xo/ip_repo/xilinx_com_hls_blasKernel_1_0 --messageDb /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/run_link/vpl.pb /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:29 2024",
+ "timestampMillis": "1715243609840",
+ "status": {
+  "cmdId": "33ff67b7-fa4d-4e8a-a851-7cee90ff89c6",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Thu May  9 16:33:33 2024",
+ "timestampMillis": "1715243613276",
+ "vivadoProject": {
+  "openDir": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 16:33:33 2024",
+ "timestampMillis": "1715243613276",
+ "buildStep": {
+  "cmdId": "1c29aa9e-2fc4-4f6f-8cad-7de50409b1c0",
+  "name": "vivado",
+  "logFile": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:33:33 2024",
+ "timestampMillis": "1715243613276",
+ "status": {
+  "cmdId": "1c29aa9e-2fc4-4f6f-8cad-7de50409b1c0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 16:34:54 2024",
+ "timestampMillis": "1715243694448",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/automation_summary_pre_synthesis.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu May  9 16:43:13 2024",
+ "timestampMillis": "1715244193026",
+ "buildStep": {
+  "cmdId": "728c3750-1f96-483b-8e5a-442b2bc00461",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:43:13 2024",
+ "timestampMillis": "1715244193027",
+ "status": {
+  "cmdId": "728c3750-1f96-483b-8e5a-442b2bc00461",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu May  9 16:43:13 2024",
+ "timestampMillis": "1715244193027",
+ "buildStep": {
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 16:43:13 2024",
+ "timestampMillis": "1715244193027",
+ "status": {
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:26:38 2024",
+ "timestampMillis": "1715257598906",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:28:18 2024",
+ "timestampMillis": "1715257698018",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/kernel_service.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:28:18 2024",
+ "timestampMillis": "1715257698019",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/kernel_service.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "KERNEL_SERVICE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:37:27 2024",
+ "timestampMillis": "1715258247513",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_FAIL",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643781",
+ "status": {
+  "cmdId": "1c29aa9e-2fc4-4f6f-8cad-7de50409b1c0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643809",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643810",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643810",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643811",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643811",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643811",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643812",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643812",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643813",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643813",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643814",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643814",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643814",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643815",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643815",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643815",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643816",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/syn/ulp_blasKernel_0_0_synth_1_ulp_blasKernel_0_0_utilization_synth.rpt",
+  "name": "blasKernel",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643817",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_system_diagram.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643817",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_init_report_utilization_0.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643857",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643913",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643917",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_init.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643919",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_io_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_IO",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643919",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_utilization_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643936",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_control_sets_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_CONTROL_SETS",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643967",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643994",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643995",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_placed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643995",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_drc_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_DRC",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643998",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_drc_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_DRC",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643999",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_methodology_drc_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_METHODOLOGY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:03 2024",
+ "timestampMillis": "1715258643999",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_methodology_drc_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_METHODOLOGY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644000",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_power_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_POWER",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644043",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_power_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_POWER",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644043",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_route_status.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_ROUTE_STATUS",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644070",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644089",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644089",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644090",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_clock_utilization_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_CLOCK_UTILIZATION",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644094",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_bus_skew_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_BUS_SKEW",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644106",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_bus_skew_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_BUS_SKEW",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644132",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644154",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644154",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/imp/impl_1_hw_bb_locked_timing_summary_postroute_physopted.rpv",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
+  "cmdId": "8ae35d0b-6824-4e53-81d8-9ee656301eef"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644179",
+ "status": {
+  "cmdId": "33ff67b7-fa4d-4e8a-a851-7cee90ff89c6",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644197",
+ "status": {
+  "cmdId": "06519652-d851-4c8b-b890-871c515c4f7f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644198",
+ "buildStep": {
+  "cmdId": "12d957c2-0790-4b37-91a6-42cb7eafd6f4",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644198",
+ "status": {
+  "cmdId": "12d957c2-0790-4b37-91a6-42cb7eafd6f4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644210",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644211",
+ "buildStep": {
+  "cmdId": "4c73d5fe-efdc-4ae8-925a-f62e44e8c9dd",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/address_map.xml -sdsl /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/sdsl.dat -xclbin /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.xml -rtd /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.rtd -o /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.xml",
+  "args": [
+   "-a",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/address_map.xml",
+   "-sdsl",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.rtd",
+   "-o",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:04 2024",
+ "timestampMillis": "1715258644211",
+ "status": {
+  "cmdId": "4c73d5fe-efdc-4ae8-925a-f62e44e8c9dd",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646750",
+ "status": {
+  "cmdId": "4c73d5fe-efdc-4ae8-925a-f62e44e8c9dd",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646751",
+ "buildStep": {
+  "cmdId": "78d533a0-3476-4dd5-959e-a0f1b95c0982",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.rtd",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646751",
+ "status": {
+  "cmdId": "78d533a0-3476-4dd5-959e-a0f1b95c0982",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646753",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646754",
+ "status": {
+  "cmdId": "78d533a0-3476-4dd5-959e-a0f1b95c0982",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646754",
+ "buildStep": {
+  "cmdId": "3ed2c83c-18b7-4676-a129-3d7ad17dcfde",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeAutomationSummary",
+  "args": [
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/automation_summary.txt"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646754",
+ "status": {
+  "cmdId": "3ed2c83c-18b7-4676-a129-3d7ad17dcfde",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646755",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/automation_summary.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646755",
+ "status": {
+  "cmdId": "3ed2c83c-18b7-4676-a129-3d7ad17dcfde",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646755",
+ "status": {
+  "cmdId": "12d957c2-0790-4b37-91a6-42cb7eafd6f4",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646757",
+ "buildStep": {
+  "cmdId": "a4c7e1bf-e051-40ce-8b65-e98e1b1c1a8d",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section BITSTREAM:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.rtd --append-section :JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas_xml.rtd --add-section BUILD_METADATA:JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.xml --add-section SYSTEM_METADATA:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_u50_gen3x16_xdma_5_202210_1 --output /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin",
+  "args": [
+   "--add-section",
+   "BITSTREAM:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.rtd",
+   "--append-section",
+   ":JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/blas.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--key-value",
+   "SYS:PlatformVBNV:xilinx_u50_gen3x16_xdma_5_202210_1",
+   "--output",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646757",
+ "status": {
+  "cmdId": "a4c7e1bf-e051-40ce-8b65-e98e1b1c1a8d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646869",
+ "status": {
+  "cmdId": "a4c7e1bf-e051-40ce-8b65-e98e1b1c1a8d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646870",
+ "buildStep": {
+  "cmdId": "bf0c2baf-2d0a-45be-bccd-d8391377d0ff",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin.info --input /home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin.info",
+   "--input",
+   "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/build_dir.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/blas.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:06 2024",
+ "timestampMillis": "1715258646870",
+ "status": {
+  "cmdId": "bf0c2baf-2d0a-45be-bccd-d8391377d0ff",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647207",
+ "status": {
+  "cmdId": "bf0c2baf-2d0a-45be-bccd-d8391377d0ff",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647209",
+ "buildStep": {
+  "cmdId": "33b944c0-75c5-45d2-8e4f-b66b722011e6",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647209",
+ "status": {
+  "cmdId": "33b944c0-75c5-45d2-8e4f-b66b722011e6",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647209",
+ "status": {
+  "cmdId": "33b944c0-75c5-45d2-8e4f-b66b722011e6",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647338",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/system_estimate_blas.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647342",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647343",
+ "status": {
+  "cmdId": "44497860-3e90-4cad-b922-2e9a10396ae3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647407",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/reports/_build.hw.xilinx_u50_gen3x16_xdma_5_202210_1/blas/link/v++_link_blas_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  9 20:44:07 2024",
+ "timestampMillis": "1715258647407",
+ "report": {
+  "path": "/home/aahmadaa/ffgemm/L2/tests/gemm_1CU/_x_temp.hw.xilinx_u50_gen3x16_xdma_5_202210_1.baseline.int8.400MHz/v++_link_blas_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

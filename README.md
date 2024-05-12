@@ -62,6 +62,8 @@ We provide pre-built FPGA bitstreams evaluated in the paper. Please navigate to 
 - U280: `int8`, `int16`, and `int32` bitstreams using HBM[0:7]
 - U280: `int8` and `int16` bitstreams using DDR[0]
 
+Update 10/05/2024: We have added bitstreams for 400 MHz target frequency builds. The frequency achieved by Xilinx's tools are 362 MHz and 371 MHz for the int8 datatype on U50 for Strassen's and baseline kernel, respectively. Detailed exploration of frequency and performance headroom would require utilizing advanced physical design optimizations using frameworks such as AutoBridge and RapidStream that perform better place-and-route for multi-die FPGAs.
+
 ## Source Code Structure
 The source code is structured as follows:
 - `L1` contains the source code for the L1 operations (e.g., L1 GeMM, transpose, double buffer)
