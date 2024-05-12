@@ -71,5 +71,16 @@ The source code is structured as follows:
 - Host code is located in `L2/src/sw/` directory and its includes are in `L2/include/sw/` directory.
 - `prebuilt_bitstreams` contains the pre-built FPGA bitstreams evaluated in the paper. The bitstreams have the file name `blasKernel.xclbin` and can be executed using the host executable that the user has to compile on their own machine using step 3 above.
 
+## Power Consumption
+Strassen's and baseline kernel's power consumption are as below. In the paper, we quote the dynamic power minus the power consumed by the GTY transcievers as transcievers are not used and can be turned off.
+
+Strassen's Kernel:
+
+![Power Strassen's]()
+
+Baseline Kernel:
+
+![Power Vitis GEMM]()
+
 ## Acknowledgements
 To be populated.
