@@ -76,11 +76,11 @@ Strassen's and baseline kernel's power consumption are as below. In the paper, w
 
 Strassen's Kernel:
 
-![Power Strassen's](https://github.com/afzalxo/FFGeMM/blob/master/images/power-strassens.png?raw=true)
+![Power Strassen's](https://github.com/afzalxo/FFGeMM/blob/master/images/power-strassens.png?raw=true | width=60%)
 
 Baseline Kernel:
 
-![Power Vitis GEMM](https://github.com/afzalxo/FFGeMM/blob/master/images/power-baseline.png?raw=true)
+![Power Vitis GEMM](https://github.com/afzalxo/FFGeMM/blob/master/images/power-baseline.png?raw=true | width=60%)
 
 ## Acknowledgements
 To be populated.
