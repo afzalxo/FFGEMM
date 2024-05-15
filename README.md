@@ -78,6 +78,8 @@ Strassen's Kernel:
 
 ![Power Strassen's](https://github.com/afzalxo/FFGeMM/blob/master/images/power-strassens.png?raw=true | width=60%)
 
+<img src="https://github.com/afzalxo/FFGeMM/blob/master/images/power-strassens.png?raw=true" width=50%>
+
 Baseline Kernel:
 
 ![Power Vitis GEMM](https://github.com/afzalxo/FFGeMM/blob/master/images/power-baseline.png?raw=true | width=60%)
